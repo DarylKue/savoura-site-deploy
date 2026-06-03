@@ -11,6 +11,8 @@ const chipsVariants = [
     description: 'Des chips croustillantes à base de patate douce locale, simplement assaisonnées pour révéler le vrai goût de la nature.',
     ingredients: 'Patate douce, huile végétale, sel.',
     emoji: '🍃',
+    imgFace: '/images/Chips_Savoura_Nature_face_A5.png',
+    imgBack: '/images/Chips_Savoura_Nature_arriere_A5.png',
   },
   {
     flavor: 'Oignon',
@@ -21,6 +23,8 @@ const chipsVariants = [
     description: 'La douceur de la patate douce relevée par la saveur unique et aromatique de l\'oignon.',
     ingredients: 'Patate douce, huile végétale, oignon en poudre, sel, épices naturelles.',
     emoji: '🧅',
+    imgFace: '/images/Chips_Savoura_Oignon_face_A5.png',
+    imgBack: '/images/Chips_Savoura_Oignon_arriere_A5.png',
   },
   {
     flavor: 'Piment',
@@ -31,6 +35,8 @@ const chipsVariants = [
     description: 'Pour les amateurs de sensations fortes ! Des chips épicées qui éveillent les papilles.',
     ingredients: 'Patate douce, huile végétale, piment, sel, épices naturelles.',
     emoji: '🌶️',
+    imgFace: '/images/Chips_Savoura_Piment_face_A5.png',
+    imgBack: '/images/Chips_Savoura_Piment_arriere_A5.png',
   },
   {
     flavor: 'Épices',
@@ -41,6 +47,8 @@ const chipsVariants = [
     description: 'Un mélange d\'épices africaines — gingembre, ail, poivre, paprika — pour une explosion de saveurs authentiques.',
     ingredients: 'Patate douce, huile végétale, gingembre, ail, paprika, poivre noir, sel.',
     emoji: '🫚',
+    imgFace: '/images/Chips_Savoura_Epices_face_A5.png',
+    imgBack: '/images/Chips_Savoura_Epices_arriere_A5.png',
   },
 ];
 
@@ -50,20 +58,32 @@ const formatPrices = [
   { label: 'Grand', desc: 'Achats familiaux', price: 2500 },
 ];
 
+const chipsFaces = [
+  { label: 'Face avant', note: '100% Local · Sans conservateurs' },
+  { label: 'Face arrière', note: 'Ingrédients & valeurs nutritionnelles' },
+];
+
 const ChipsCarousel = () => {
   const [active, setActive] = useState(0);
+  const [face, setFace] = useState(0);
   const variant = chipsVariants[active];
+
+  // Reset to face avant when flavor changes
+  const handleFlavorChange = (i) => {
+    setActive(i);
+    setFace(0);
+  };
 
   return (
     <div className="chips-carousel" style={{ '--accent': variant.color, '--accent-light': variant.bgLight }}>
-      {/* Flavor selector dots */}
+      {/* Flavor selector tabs */}
       <div className="flavor-tabs">
         {chipsVariants.map((v, i) => (
           <button
             key={v.flavor}
             className={`flavor-tab ${i === active ? 'active' : ''}`}
             style={i === active ? { background: v.color, color: '#fff', borderColor: v.color } : {}}
-            onClick={() => setActive(i)}
+            onClick={() => handleFlavorChange(i)}
           >
             <span className="flavor-emoji">{v.emoji}</span>
             {v.flavor}
@@ -74,18 +94,29 @@ const ChipsCarousel = () => {
       {/* Card */}
       <div className="chips-card" key={active}>
         <div className="chips-card-left" style={{ background: variant.bgLight }}>
-          {/* Show only the front of the chips bag - crop to left half */}
+          {/* Face toggle — same pattern as ignames */}
+          <div className="chips-face-tabs">
+            {chipsFaces.map((f, i) => (
+              <button
+                key={i}
+                className={`face-tab chips-face-tab ${i === face ? 'active' : ''}`}
+                style={i === face ? { background: variant.color, boxShadow: `0 2px 8px ${variant.color}55` } : {}}
+                onClick={() => setFace(i)}
+              >
+                {f.label}
+              </button>
+            ))}
+          </div>
+
           <div className="chips-img-container">
             <img
-              src="/images/chips.jpeg"
-              alt={`Chips ${variant.flavor}`}
-              className="chips-img"
-              style={{ objectPosition: `${active * 25 + 12.5}% top` }}
+              src={face === 0 ? variant.imgFace : variant.imgBack}
+              alt={`Chips ${variant.flavor} — ${chipsFaces[face].label}`}
+              className="chips-img-single"
             />
           </div>
-          <div className="chips-badge" style={{ background: variant.color }}>
-            {variant.emoji} {variant.flavor}
-          </div>
+
+          <p className="chips-face-note">{chipsFaces[face].note}</p>
         </div>
 
         <div className="chips-card-right">
@@ -124,7 +155,7 @@ const ChipsCarousel = () => {
       <div className="carousel-controls">
         <button
           className="carousel-btn"
-          onClick={() => setActive(a => (a - 1 + chipsVariants.length) % chipsVariants.length)}
+          onClick={() => handleFlavorChange((active - 1 + chipsVariants.length) % chipsVariants.length)}
         >
           ←
         </button>
@@ -134,13 +165,13 @@ const ChipsCarousel = () => {
               key={i}
               className={`dot ${i === active ? 'active' : ''}`}
               style={i === active ? { background: variant.color } : {}}
-              onClick={() => setActive(i)}
+              onClick={() => handleFlavorChange(i)}
             />
           ))}
         </div>
         <button
           className="carousel-btn"
-          onClick={() => setActive(a => (a + 1) % chipsVariants.length)}
+          onClick={() => handleFlavorChange((active + 1) % chipsVariants.length)}
         >
           →
         </button>
@@ -150,8 +181,13 @@ const ChipsCarousel = () => {
 };
 
 const ignameFaces = [
-  { label: 'Face avant', pos: 'left', note: 'Sachet refermable · 600g' },
-  { label: 'Face arrière', pos: 'right', note: 'Mode de préparation & valeurs nutritionnelles' },
+  { label: 'Face avant', note: 'Sachet refermable · 600g' },
+  { label: 'Face arrière', note: 'Mode de préparation & valeurs nutritionnelles' },
+];
+
+const ignameImages = [
+  '/images/Image_surgelees_face_A5.png',
+  '/images/Image_surgelees_arriere_A5.png',
 ];
 
 const IgnamesCard = () => {
@@ -186,13 +222,9 @@ const IgnamesCard = () => {
           </div>
           <div className="ignames-img-container">
             <img
-              src="/images/ignames.png"
-              alt="Ignames Surgelées Savoura"
-              className="ignames-img"
-              style={{
-                objectPosition: face === 0 ? 'left center' : 'right center',
-                transition: 'object-position 0.5s ease',
-              }}
+              src={ignameImages[face]}
+              alt={`Ignames Surgelées Savoura — ${ignameFaces[face].label}`}
+              className="ignames-img-single"
             />
           </div>
           <p className="ignames-face-note">{ignameFaces[face].note}</p>
