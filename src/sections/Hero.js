@@ -27,7 +27,7 @@ const Hero = ({ onNavigate }) => {
       <div className="container hero-content">
         {/* Left column */}
         <div className="hero-text">
-          <span className="hero-eyebrow animate">🌿 Fait avec amour au Togo</span>
+          <span className="hero-eyebrow animate">Fait avec amour au Togo</span>
           <h1 className="hero-title animate">
             Le Goût Local<br />
             <span className="hero-highlight">Revisité</span>

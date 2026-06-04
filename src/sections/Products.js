@@ -21,7 +21,7 @@ const chipsVariants = [
     price: 500,
     weight: '90g',
     description: 'La douceur de la patate douce relevée par la saveur unique et aromatique de l\'oignon.',
-    ingredients: 'Patate douce, huile végétale, oignon en poudre, sel, épices naturelles.',
+    ingredients: 'Patate douce, huile végétale, oignon en poudre, sel.',
     emoji: '🧅',
     imgFace: '/images/Chips_Savoura_Oignon_face_A5.png',
     imgBack: '/images/Chips_Savoura_Oignon_arriere_A5.png',
@@ -33,7 +33,7 @@ const chipsVariants = [
     price: 500,
     weight: '90g',
     description: 'Pour les amateurs de sensations fortes ! Des chips épicées qui éveillent les papilles.',
-    ingredients: 'Patate douce, huile végétale, piment, sel, épices naturelles.',
+    ingredients: 'Patate douce, huile végétale, piment, sel.',
     emoji: '🌶️',
     imgFace: '/images/Chips_Savoura_Piment_face_A5.png',
     imgBack: '/images/Chips_Savoura_Piment_arriere_A5.png',
@@ -237,7 +237,7 @@ const IgnamesCard = () => {
           </div>
           <h3 className="ignames-title">Ignames Surgelées <span>Savoura</span></h3>
           <p className="ignames-tagline">
-            "Le goût du vrai, la praticité en plus !"
+            "Le goût local revisité !"
           </p>
           <p className="ignames-desc">
             Savoura sélectionne pour vous les meilleures ignames locales et les transforme avec soin
@@ -272,7 +272,7 @@ const IgnamesCard = () => {
 
           <div className="ignames-price-row">
             <div className="ignames-price">
-              <span className="price-amount">2 500 FCFA</span>
+              <span className="price-amount">1 500 FCFA</span>
               <span className="price-weight">· 600g</span>
             </div>
             <span className="conservation-note">❄️ À conserver à -18°C</span>
@@ -301,8 +301,8 @@ const Products = () => {
     <div className="products-section" ref={sectionRef}>
       <div className="container">
         <div className="section-header anim">
-          <span className="section-eyebrow">Notre Gamme</span>
-          <h2 className="section-title">Nos Produits</h2>
+          {/* <span className="section-eyebrow">Notre Gamme</span> */}
+          <h2 className="section-title">Notre gamme de Produits</h2>
           <p className="section-subtitle">
             Deux gammes pensées pour valoriser les saveurs africaines tout en répondant
             aux exigences de la vie moderne.
