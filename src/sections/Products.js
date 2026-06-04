@@ -11,8 +11,8 @@ const chipsVariants = [
     description: 'Des chips croustillantes à base de patate douce locale, simplement assaisonnées pour révéler le vrai goût de la nature.',
     ingredients: 'Patate douce, huile végétale, sel.',
     emoji: '🍃',
-    imgFace: '/images/Chips_Savoura_Nature_face_A5.png',
-    imgBack: '/images/Chips_Savoura_Nature_arriere_A5.png',
+    imgFace: '/images/Chips_Savoura_Nature_face_A5.webp',
+    imgBack: '/images/Chips_Savoura_Nature_arriere_A5.webp',
   },
   {
     flavor: 'Oignon',
@@ -23,8 +23,8 @@ const chipsVariants = [
     description: 'La douceur de la patate douce relevée par la saveur unique et aromatique de l\'oignon.',
     ingredients: 'Patate douce, huile végétale, oignon en poudre, sel.',
     emoji: '🧅',
-    imgFace: '/images/Chips_Savoura_Oignon_face_A5.png',
-    imgBack: '/images/Chips_Savoura_Oignon_arriere_A5.png',
+    imgFace: '/images/Chips_Savoura_Oignon_face_A5.webp',
+    imgBack: '/images/Chips_Savoura_Oignon_arriere_A5.webp',
   },
   {
     flavor: 'Piment',
@@ -35,8 +35,8 @@ const chipsVariants = [
     description: 'Pour les amateurs de sensations fortes ! Des chips épicées qui éveillent les papilles.',
     ingredients: 'Patate douce, huile végétale, piment, sel.',
     emoji: '🌶️',
-    imgFace: '/images/Chips_Savoura_Piment_face_A5.png',
-    imgBack: '/images/Chips_Savoura_Piment_arriere_A5.png',
+    imgFace: '/images/Chips_Savoura_Piment_face_A5.webp',
+    imgBack: '/images/Chips_Savoura_Piment_arriere_A5.webp',
   },
   {
     flavor: 'Épices',
@@ -47,8 +47,8 @@ const chipsVariants = [
     description: 'Un mélange d\'épices africaines — gingembre, ail, poivre, paprika — pour une explosion de saveurs authentiques.',
     ingredients: 'Patate douce, huile végétale, gingembre, ail, paprika, poivre noir, sel.',
     emoji: '🫚',
-    imgFace: '/images/Chips_Savoura_Epices_face_A5.png',
-    imgBack: '/images/Chips_Savoura_Epices_arriere_A5.png',
+    imgFace: '/images/Chips_Savoura_Epices_face_A5.webp',
+    imgBack: '/images/Chips_Savoura_Epices_arriere_A5.webp',
   },
 ];
 
@@ -186,8 +186,8 @@ const ignameFaces = [
 ];
 
 const ignameImages = [
-  '/images/Image_surgelees_face_A5.png',
-  '/images/Image_surgelees_arriere_A5.png',
+  '/images/Image_surgelees_face_A5.webp',
+  '/images/Image_surgelees_arriere_A5.webp',
 ];
 
 const IgnamesCard = () => {
