@@ -288,7 +288,7 @@ const IgnamesCard = () => {
 
           <div className="ignames-price-row">
             <div className="ignames-price">
-              <span className="price-amount">1 500 FCFA</span>
+              <span className="price-amount">2 500 FCFA</span>
               <span className="price-weight">· 600g</span>
             </div>
             <span className="conservation-note">❄️ À conserver à -18°C</span>
