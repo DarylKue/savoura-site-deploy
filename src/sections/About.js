@@ -58,7 +58,7 @@ const About = () => {
           <span className="section-eyebrow">Notre Histoire</span>
           <h2 className="section-title" style={{ color: '#fff' }}>À Propos de Savoura</h2>
           <p className="about-intro">
-            Savoura est une marque agroalimentaire togolaise qui valorise les richesses agricoles locales à travers des produits modernes, naturels et accessibles. En transformant la patate douce en chips aux saveurs authentiques et l’igname en produits surgelés prêts à l’emploi, Savoura offre une alternative locale de qualité aux produits importés. Notre vision est de soutenir les producteurs togolais, promouvoir la consommation locale et démontrer qu’innovation, praticité et fierté africaine peuvent se retrouver dans chaque bouchée
+            Savoura est une marque agroalimentaire togolaise qui valorise les richesses agricoles locales à travers des produits modernes, naturels et accessibles. En transformant la patate douce en chips aux saveurs authentiques et l’igname en produits surgelés prêts à l’emploi, Savoura offre une alternative locale de qualité aux produits importés. Notre vision est de soutenir les producteurs togolais, promouvoir la consommation locale et démontrer qu’innovation, praticité et fierté africaine peuvent se retrouver dans chaque bouchée.
           </p>
         </div>
 
