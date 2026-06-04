@@ -15,6 +15,7 @@ const Footer = () => (
         <a href="#accueil">Accueil</a>
         <a href="#produits">Produits</a>
         <a href="#apropos">À Propos</a>
+        <a href="#contacts">Contacts</a>
       </div>
       <p className="footer-copy">© 2025 Savoura · Groupe 13 – Innov+ · Togo</p>
     </div>
