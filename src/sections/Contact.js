@@ -7,7 +7,7 @@ const contactMethods = [
     label: 'Téléphone',
     value: '+228 97 19 88 15',
     sub: 'Lun – Sam · 8h – 18h',
-    href: 'tel:+22897199915',
+    href: 'tel:+22897198815',
     color: '#4a7c2f',
   },
   {
