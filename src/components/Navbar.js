@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 
-const Navbar = ({ activeSection, onNavigate }) => {
+const Navbar = ({ activeSection, onNavigate, onOrder }) => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -15,6 +15,7 @@ const Navbar = ({ activeSection, onNavigate }) => {
     { id: 'accueil', label: 'Accueil' },
     { id: 'produits', label: 'Produits' },
     { id: 'apropos', label: 'À Propos' },
+    { id: 'contact', label: 'Contacts' },
   ];
 
   return (
@@ -38,7 +39,7 @@ const Navbar = ({ activeSection, onNavigate }) => {
           ))}
         </ul>
 
-        <button className="nav-cta" onClick={() => onNavigate('produits')}>
+        <button className="nav-cta" onClick={onOrder}>
           Commander
         </button>
 
@@ -62,7 +63,7 @@ const Navbar = ({ activeSection, onNavigate }) => {
             {link.label}
           </button>
         ))}
-        <button className="nav-cta mobile-cta" onClick={() => { onNavigate('produits'); setMenuOpen(false); }}>
+        <button className="nav-cta mobile-cta" onClick={() => { onOrder(); setMenuOpen(false); }}>
           Commander
         </button>
       </div>

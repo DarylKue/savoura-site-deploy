@@ -58,9 +58,7 @@ const About = () => {
           <span className="section-eyebrow">Notre Histoire</span>
           <h2 className="section-title" style={{ color: '#fff' }}>À Propos de Savoura</h2>
           <p className="about-intro">
-            Née d'un constat simple mais fort : le Togo regorge de richesses agricoles sous-exploitées.
-            La patate douce et l'igname, cultivées en abondance par nos agriculteurs, méritaient une seconde vie
-            moderne, naturelle et compétitive.
+            Savoura est une marque agroalimentaire togolaise qui valorise les richesses agricoles locales à travers des produits modernes, naturels et accessibles. En transformant la patate douce en chips aux saveurs authentiques et l’igname en produits surgelés prêts à l’emploi, Savoura offre une alternative locale de qualité aux produits importés. Notre vision est de soutenir les producteurs togolais, promouvoir la consommation locale et démontrer qu’innovation, praticité et fierté africaine peuvent se retrouver dans chaque bouchée
           </p>
         </div>
 
@@ -149,24 +147,6 @@ const About = () => {
           </div>
         </div>
 
-        {/* Contact */}
-        <div className="contact-row about-anim">
-          <h3 className="contact-heading">Nous contacter</h3>
-          <div className="contact-items">
-            <a href="tel:+22890000000" className="contact-item">
-              <span className="contact-icon">📞</span>
-              <span>+228 90 00 00 00</span>
-            </a>
-            <a href="mailto:savoura.tg@gmail.com" className="contact-item">
-              <span className="contact-icon">✉️</span>
-              <span>savoura.tg@gmail.com</span>
-            </a>
-            <div className="contact-item">
-              <span className="contact-icon">📱</span>
-              <span>@savoura_igname</span>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );

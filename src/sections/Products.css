@@ -604,3 +604,192 @@
     flex-direction: column;
   }
 }
+
+
+/* ===== BOUTON COMMANDER (inline, dans la carte) ===== */
+.order-btn-inline {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 20px;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--btn-color, var(--orange));
+  border: 1.5px solid var(--btn-color, var(--orange));
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 4px;
+}
+
+.order-btn-inline:hover {
+  background: var(--btn-color, var(--orange));
+  color: #fff;
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--btn-color, var(--orange)) 35%, transparent);
+  transform: translateY(-1px);
+}
+
+.order-btn-inline-icon {
+  font-size: 14px;
+  line-height: 1;
+}
+
+/* ===== MODAL DE COMMANDE ===== */
+.order-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(30, 15, 5, 0.65);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 16px;
+  animation: fadeInOverlay 0.2s ease;
+}
+
+@keyframes fadeInOverlay {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.order-modal {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  padding: 40px 36px 32px;
+  max-width: 460px;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  animation: slideUpModal 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes slideUpModal {
+  from { opacity: 0; transform: translateY(32px) scale(0.95); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.order-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--cream);
+  color: var(--text-mid);
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.order-modal-close:hover {
+  background: var(--cream-dark);
+  color: var(--text-dark);
+}
+
+.order-modal-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.order-modal-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.order-modal-text {
+  font-size: 14px;
+  color: var(--text-mid);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.order-modal-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.order-contact-btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 20px;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: var(--transition);
+  text-align: left;
+  border: 2px solid transparent;
+}
+
+.order-contact-btn > span:first-child {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.order-contact-btn div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ocb-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.ocb-value {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.order-contact-phone {
+  background: rgba(232,132,26,0.08);
+  border-color: rgba(232,132,26,0.2);
+  color: var(--text-dark);
+}
+.order-contact-phone .ocb-label { color: var(--orange); }
+.order-contact-phone:hover {
+  background: rgba(232,132,26,0.15);
+  border-color: var(--orange);
+}
+
+.order-contact-mail {
+  background: rgba(74,124,47,0.08);
+  border-color: rgba(74,124,47,0.2);
+  color: var(--text-dark);
+}
+.order-contact-mail .ocb-label { color: var(--green); }
+.order-contact-mail:hover {
+  background: rgba(74,124,47,0.15);
+  border-color: var(--green);
+}
+
+.order-modal-note {
+  font-size: 12px;
+  color: var(--text-light);
+}
+
+@media (max-width: 480px) {
+  .order-modal {
+    padding: 32px 20px 24px;
+  }
+  .order-modal-title { font-size: 19px; }
+}

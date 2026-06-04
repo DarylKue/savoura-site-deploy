@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
+import ReactDOM from 'react-dom';
+import OrderModal from '../components/OrderModal';
 import './Products.css';
 
 const chipsVariants = [
@@ -66,6 +68,7 @@ const chipsFaces = [
 const ChipsCarousel = () => {
   const [active, setActive] = useState(0);
   const [face, setFace] = useState(0);
+  const [showOrder, setShowOrder] = useState(false);
   const variant = chipsVariants[active];
 
   // Reset to face avant when flavor changes
@@ -148,6 +151,16 @@ const ChipsCarousel = () => {
               </div>
             ))}
           </div>
+
+          {/* Bouton Commander — subtil, dans la carte */}
+          <button
+            className="order-btn-inline"
+            style={{ '--btn-color': variant.color }}
+            onClick={() => setShowOrder(true)}
+          >
+            <span className="order-btn-inline-icon">🛒</span>
+            Commander
+          </button>
         </div>
       </div>
 
@@ -176,6 +189,8 @@ const ChipsCarousel = () => {
           →
         </button>
       </div>
+
+      {showOrder && <OrderModal accentColor={variant.color} onClose={() => setShowOrder(false)} />}
     </div>
   );
 };
@@ -192,6 +207,7 @@ const ignameImages = [
 
 const IgnamesCard = () => {
   const [face, setFace] = useState(0);
+  const [showOrder, setShowOrder] = useState(false);
   const prep = [
     { icon: '🫕', method: 'À Bouillir', time: '12–15 min' },
     { icon: '🍳', method: 'À Cuire', time: '10–12 min' },
@@ -277,8 +293,20 @@ const IgnamesCard = () => {
             </div>
             <span className="conservation-note">❄️ À conserver à -18°C</span>
           </div>
+
+          {/* Bouton Commander — subtil, dans la carte */}
+          <button
+            className="order-btn-inline"
+            style={{ '--btn-color': 'var(--green)' }}
+            onClick={() => setShowOrder(true)}
+          >
+            <span className="order-btn-inline-icon">🛒</span>
+            Commander
+          </button>
         </div>
       </div>
+
+      {showOrder && <OrderModal accentColor="var(--green)" onClose={() => setShowOrder(false)} />}
     </div>
   );
 };
