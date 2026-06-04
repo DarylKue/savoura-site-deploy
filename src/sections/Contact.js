@@ -7,7 +7,7 @@ const contactMethods = [
     label: 'Téléphone',
     value: '+228 97 19 88 15',
     sub: 'Lun – Sam · 8h – 18h',
-    href: 'tel:+22890000000',
+    href: 'tel:+22897199915',
     color: '#4a7c2f',
   },
   {
@@ -22,7 +22,7 @@ const contactMethods = [
     icon: '📱',
     label: 'Réseaux sociaux',
     value: '@savoura',
-    sub: 'Facebook · Instagram',
+    sub: 'Facebook · Instagram · TikTok',
     href: '#',
     color: '#3a2007',
   },
